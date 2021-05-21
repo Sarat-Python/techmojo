@@ -8,7 +8,7 @@ a = df['time'].tolist()
 
 def timeavg(a):
     new =[]
-    for i in range(len(a)):
+    for i in range(len(a)-3):
         h,m,s = a[i].split(':')
         total = int(h) +3600 + int(m)*60 + int(s)
 
@@ -16,4 +16,4 @@ def timeavg(a):
 
 n = timeavg(a)
 avg_time = (n/2)
-print('The avergae time for the transactions is :', avg_time,"microseconds!!")
+print('The average time between two transactions is :', avg_time,"seconds!!")
