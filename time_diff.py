@@ -4,16 +4,19 @@ from datetime import datetime
 import numpy as np
 
 df = pd.read_csv('test.csv', sep = ",")
-a = df['time'].tolist()
+time_lst = df['time'].tolist()
 
-def timeavg(a):
-    new =[]
-    for i in range(len(a)-3):
-        h,m,s = a[i].split(':')
+'''
+Function to calculate the time difference
+''' 
+def timeavg(time_lst):
+    new =[] # declare an empty list
+    for i in range(len(time_lst)-3):
+        h,m,s = time_lst[i].split(':')
         total = int(h) +3600 + int(m)*60 + int(s)
 
     return total
 
-n = timeavg(a)
+n = timeavg(time_lst)
 avg_time = (n/2)
 print('The average time between two transactions is :', avg_time,"seconds!!")
