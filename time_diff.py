@@ -11,7 +11,7 @@ Function to calculate the time difference
 ''' 
 def timeavg(time_lst):
     new =[] # declare an empty list
-    for i in range(len(time_lst)-3):
+    for i in range(len(time_lst)):
         h,m,s = time_lst[i].split(':')
         total = int(h) +3600 + int(m)*60 + int(s)
 
